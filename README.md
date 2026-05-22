@@ -259,3 +259,7 @@ Special thanks to:
 ## ⭐ If you like this project, consider starring the repository ⭐
 
 </div>
+## Disclaimer
+
+This project uses third-party AI models and APIs including Groq, LLaMA, DeepSeek, and Mixtral.
+All respective model rights belong to their original owners.
