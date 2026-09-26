@@ -27,9 +27,9 @@ client = Groq(api_key=api_key)
 # CONFIG
 # ─────────────────────────────────────────────
 GROQ_MODELS = {
-    "llama-3.3-70b-versatile": "LLaMA 3.3 70B",
-    "llama-3.1-8b-instant": "LLaMA 3.1 8B (Fast)",
-    "qwen/qwen3-32b": "Qwen 3 32B",
+    "openai/gpt-oss-120b": "GPT-OSS 120B",
+    "openai/gpt-oss-20b": "GPT-OSS 20B (Fast)",
+    "qwen/qwen3.6-27b": "Qwen 3.6 27B",
 }
 
 TARGET_MODELS = {
@@ -100,7 +100,7 @@ TEMPLATES = {
 # ─────────────────────────────────────────────
 # HELPERS
 # ─────────────────────────────────────────────
-def ask_groq(messages, model="llama-3.3-70b-versatile", max_tokens=2000):
+def ask_groq(messages, model="openai/gpt-oss-120b", max_tokens=2000):
     try:
         response = client.chat.completions.create(
             model=model, messages=messages,
@@ -110,7 +110,7 @@ def ask_groq(messages, model="llama-3.3-70b-versatile", max_tokens=2000):
     except Exception as e:
         return f"Error: {e}"
 
-def stream_groq(messages, model="llama-3.3-70b-versatile", max_tokens=2000):
+def stream_groq(messages, model="openai/gpt-oss-120b", max_tokens=2000):
     try:
         stream = client.chat.completions.create(
             model=model, messages=messages,
@@ -635,7 +635,7 @@ defaults = {
     "idea": "",
     "theme": "dark",
     "target_model": None,
-    "groq_model": "llama-3.3-70b-versatile",
+    "groq_model": "openai/gpt-oss-120b",
     "mc_questions": [],
     "mc_answers": {},
     "custom_answers": {},
